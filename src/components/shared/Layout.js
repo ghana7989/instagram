@@ -1,24 +1,10 @@
 import React from "react";
 import { useLayoutStyles } from "../../styles";
-import Navbar from '../shared/Navbar';
-import SEO from '../shared/Seo';
 
-function Layout({children, title, marginTop= 60}) {
-  const classes = useLayoutStyles();
+function Layout() {
+  useLayoutStyles();
 
-  return (
-    <section className={classes.section}>
-      <SEO title={title}/>
-      <Navbar/>
-      <main className={classes.main} style={{marginTop}}>
-        <section className={classes.childrenWrapper}>
-          <div className={classes.children}>
-            {children}
-          </div>
-        </section>
-      </main>
-    </section>
-  );
+  return <div>Layout</div>;
 }
 
 export default Layout;
