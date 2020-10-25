@@ -1,104 +1,72 @@
 import React from "react";
 import { useSignUpPageStyles } from "../styles";
 import SEO from "../components/shared/Seo";
-import { Card, Typography, TextField, Button } from "@material-ui/core";
-import { LoginWithFacebook } from "./login";
-import { Link, useHistory } from "react-router-dom";
-import { AuthContext } from "../auth";
+import { Card, TextField, Button, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import {LoginWithFacebook} from './login';
 
 function SignUpPage() {
   const classes = useSignUpPageStyles();
-  const { signUpWithEmailAndPassword } = React.useContext(AuthContext);
-  const [values, setValues] = React.useState({
-    email: "",
-    name: "",
-    username: "",
-    password: "",
-  });
-  const history = useHistory();
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setValues((prev) => ({ ...prev, [name]: value }));
-  }
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    await signUpWithEmailAndPassword(values);
-    history.push("/");
-  }
 
   return (
     <>
-      <SEO title="Sign up" />
+      <SEO title="Sign up"/>
       <section className={classes.section}>
         <article>
           <Card className={classes.card}>
-            <div className={classes.cardHeader} />
+            <div className={classes.cardHeader}/>
             <Typography className={classes.cardHeaderSubHeader}>
               Sign up to see photos and videos from your friends.
             </Typography>
-            <LoginWithFacebook
-              color="primary"
-              iconColor="white"
-              variant="contained"
-            />
+            <LoginWithFacebook color="primary" iconColor="white" variant="contained"/>
             <div className={classes.orContainer}>
-              <div className={classes.orLine} />
+              <div className={classes.orLine}/>
               <div>
-                <Typography variant="body2" color="textSecondary">
+                <Typography color="textSecondary" variant="body2">
                   OR
                 </Typography>
               </div>
-              <div className={classes.orLine} />
+              <div className={classes.orLine}/>
             </div>
-            <form onSubmit={handleSubmit}>
-              <TextField
-                name="email"
-                onChange={handleChange}
-                fullWidth
-                variant="filled"
-                label="Email"
-                type="email"
-                margin="dense"
+            <form>
+            <TextField
                 className={classes.textField}
+                fullWidth
+                label="Email"
+                margin="dense"
+                type="email"
+                variant="filled"
               />
               <TextField
-                name="name"
-                onChange={handleChange}
+                className={classes.textField}
                 fullWidth
-                variant="filled"
                 label="Full Name"
                 margin="dense"
-                className={classes.textField}
+                variant="filled"
               />
               <TextField
-                name="username"
-                onChange={handleChange}
+                autoComplete="username"
+                className={classes.textField}
                 fullWidth
-                variant="filled"
                 label="Username"
                 margin="dense"
-                className={classes.textField}
-                autoComplete="username"
+                variant="filled"
               />
               <TextField
-                name="password"
-                onChange={handleChange}
-                fullWidth
-                variant="filled"
-                label="Password"
-                type="password"
-                margin="dense"
-                className={classes.textField}
                 autoComplete="new-password"
+                className={classes.textField}
+                fullWidth
+                label="Password"
+                margin="dense"
+                type="password"
+                variant="filled"
               />
               <Button
-                variant="contained"
-                fullWidth
-                color="primary"
                 className={classes.button}
+                color="primary"
+                fullWidth
                 type="submit"
+                variant="contained"
               >
                 Sign Up
               </Button>
@@ -110,7 +78,7 @@ function SignUpPage() {
             </Typography>
             <Link to="/accounts/login">
               <Button color="primary" className={classes.loginButton}>
-                Log in
+                Login
               </Button>
             </Link>
           </Card>

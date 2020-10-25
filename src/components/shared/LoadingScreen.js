@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoadingScreenStyles } from "../../styles";
-import { LogoLoadingIcon } from "../../icons";
+import {LogoLoadingIcon} from '../../icons';
 
 function LoadingScreen() {
   const classes = useLoadingScreenStyles();
@@ -8,7 +8,7 @@ function LoadingScreen() {
   return (
     <section className={classes.section}>
       <span>
-        <LogoLoadingIcon />
+        <LogoLoadingIcon/>
       </span>
     </section>
   );

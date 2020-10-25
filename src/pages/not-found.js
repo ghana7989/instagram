@@ -1,11 +1,10 @@
 import React from "react";
-import Layout from "../components/shared/Layout";
+import Layout from '../components/shared/Layout';
 import { Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 function NotFoundPage() {
   return (
-    <Layout minimalNavbar title="Page Not Found" marginTop={120}>
+    <Layout title="Page Not Found" marginTop={120}>
       <Typography variant="h5" align="center" paragraph>
         Sorry, this page isn't available.
       </Typography>
@@ -18,8 +17,10 @@ function NotFoundPage() {
           </Typography>
         </Link>
       </Typography>
+      
+      
     </Layout>
-  );
+    );
 }
 
 export default NotFoundPage;
