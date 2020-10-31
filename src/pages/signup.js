@@ -74,7 +74,7 @@ function SignUpPage() {
             <Typography variant="body2" align="right">
               Have an account?
             </Typography>
-            <Link to={LOGIN_PAGE}>
+            <Link to={process.env.PUBLIC_URL + "/accounts/login"}>
               <Button color="primary" className={classes.loginButton}>Login</Button>
             </Link>
           </Card>

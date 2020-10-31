@@ -9,7 +9,6 @@ import EditProfilePage from "./pages/edit-profile";
 import LoginPage from "./pages/login";
 import SignUpPage from "./pages/signup";
 import NotFoundPage from "./pages/not-found";
-import { defaultUser } from "./data";
 
 function App() {
   return (
@@ -17,8 +16,8 @@ function App() {
       <Switch>
         <Route exact path={FEED_PAGE} component={FeedPage} />
         <Route exact path={EXPLORE_PAGE} component={ExplorePage} />
-        <Route exact path={PROFILE_PAGE()} component={ProfilePage} />
-        <Route exact path={POST_PAGE()} component={PostPage} />
+        <Route exact path="/:userName" component={ProfilePage} />
+        <Route exact path="/p/:postId" component={PostPage} />
         <Route exact path={EDIT_PROFILE_PAGE} component={EditProfilePage} />
         <Route exact path={LOGIN_PAGE} component={LoginPage} />
         <Route exact path={SIGNUP_PAGE} component={SignUpPage} />
