@@ -6,20 +6,25 @@ import { CommentIcon, LikeIcon, MoreIcon, RemoveIcon, SaveIcon, ShareIcon, Unlik
 import { Link } from "react-router-dom";
 import { POST_PAGE, PROFILE_PAGE } from "../../Routes";
 import { Button, Divider, Hidden, TextField, Typography } from "@material-ui/core";
-import HTMLEllipsis from "react-lines-ellipsis/lib/html"
+import HTMLEllipsis from "react-lines-ellipsis/lib/html";
+import FollowSuggestions from "../shared/FollowSuggestions";
+import OptionsDialog from "../shared/OptionsDialog"
 
 
-function FeedPost({ post }) {
+
+function FeedPost({ post, index }) {
   const classes = useFeedPostStyles();
   const { media, likes, comments, created_at, user, id, caption } = post;
   const [showCaption, setShowCaption] = useState(false)
+  const showFollowSuggestions = index === 1;
+  const [showOptionsDialog, setShowOptionsDialog] = useState(false)
 
   return <>
-    <article className={classes.article}>
+    <article className={classes.article} style={{ marginBotto: showFollowSuggestions && 30 }}>
       {/* <FeedPostHeader */}
       <div className={classes.postHeader}>
         <UserCard user={user} />
-        <MoreIcon className={classes.moreIcon} />
+        <MoreIcon className={classes.moreIcon} onClick={() => setShowOptionsDialog(true)} />
       </div>
       {/* Feed Post Image */}
       <div>
@@ -102,8 +107,18 @@ function FeedPost({ post }) {
         <Comment />
       </Hidden>
     </article>
+    {
+      showFollowSuggestions && <FollowSuggestions />
+    }
+    {showOptionsDialog && <OptionsDialog onClose={() => setShowOptionsDialog(false)} />}
   </>;
 }
+
+
+// Functions -----------------------------------
+
+
+
 function LikeButton() {
   const classes = useFeedPostStyles();
   const [liked, setLiked] = useState(false)
