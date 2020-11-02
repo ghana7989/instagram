@@ -4,7 +4,6 @@ import SEO from "../components/shared/Seo";
 import { Link } from "react-router-dom";
 import { Button, Card, TextField, Typography } from "@material-ui/core";
 import { LoginWithFacebook } from "./login";
-import { LOGIN_PAGE } from "../Routes";
 
 function SignUpPage() {
   const classes = useSignUpPageStyles();

@@ -3,7 +3,6 @@ import { useLoginPageStyles } from "../styles";
 import SEO from "../components/shared/Seo";
 import { Button, Card, CardHeader, TextField, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { SIGNUP_PAGE } from "../Routes";
 import FacebookIconBlue from "../images/facebook-icon-blue.svg"
 import FacebookIconWhite from "../images/facebook-icon-white.png"
 

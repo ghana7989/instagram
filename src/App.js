@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, useHistory, useLocation } from "react-router-dom";
-import { FEED_PAGE, EXPLORE_PAGE, PROFILE_PAGE, POST_PAGE, EDIT_PROFILE_PAGE, LOGIN_PAGE, SIGNUP_PAGE, ERROR404 } from "./Routes";
+import { FEED_PAGE, EXPLORE_PAGE, EDIT_PROFILE_PAGE, LOGIN_PAGE, SIGNUP_PAGE, ERROR404 } from "./Routes";
 import FeedPage from "./pages/feed";
 import ExplorePage from "./pages/explore";
 import ProfilePage from "./pages/profile";

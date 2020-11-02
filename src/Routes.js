@@ -1,4 +1,3 @@
-import { defaultUser } from "./data";
 
 export const FEED_PAGE = process.env.PUBLIC_URL + '/';
 export const EXPLORE_PAGE = process.env.PUBLIC_URL + "/explore";

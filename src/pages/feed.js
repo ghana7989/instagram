@@ -11,7 +11,7 @@ import { LoadingLargeIcon } from "../icons";
 
 function FeedPage() {
   const classes = useFeedPageStyles();
-  const [isEndOfFeed, setIsEndOfFeed] = useState(false);
+  const [isEndOfFeed] = useState(false);
 
   let loading = false;
 
