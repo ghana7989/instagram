@@ -2,9 +2,18 @@ import React from "react";
 import { useFeedPostSkeletonStyles } from "../../styles";
 
 function FeedPostSkeleton() {
-  useFeedPostSkeletonStyles();
+  const classes = useFeedPostSkeletonStyles();
 
-  return <div>FeedPostSkeleton</div>;
+  return <div className={classes.container}>
+    <div className={classes.headerSkeleton}>
+      <div className={classes.avatarSkeleton}></div>
+      <div className={classes.headerTextSkeleton}>
+        <div className={classes.primaryTextSkeleton}></div>
+        <div className={classes.secondaryTextSkeleton}></div>
+      </div>
+    </div>
+    <div className={classes.mediaSkeleton}></div>
+  </div>;
 }
 
 export default FeedPostSkeleton;

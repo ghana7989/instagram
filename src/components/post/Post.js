@@ -6,16 +6,25 @@ import { CommentIcon, LikeIcon, MoreIcon, RemoveIcon, SaveIcon, ShareIcon, Unlik
 import { Link } from "react-router-dom";
 import { POST_PAGE, PROFILE_PAGE } from "../../Routes";
 import { Button, Divider, Hidden, TextField, Typography } from "@material-ui/core";
-import FollowSuggestions from "../shared/FollowSuggestions";
 import OptionsDialog from "../shared/OptionsDialog";
 import { defaultPost } from "../../data";
+import PostSkeleton from "./PostSkeleton";
 
 
 
 function Post({ post, index }) {
   const classes = usePostStyles();
+  const [loading, setLoading] = useState(true)
   const { media, likes, comments, created_at, user, id, caption } = defaultPost;
-  const [showOptionsDialog, setShowOptionsDialog] = useState(false)
+  const [showOptionsDialog, setShowOptionsDialog] = useState(false);
+
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3000);
+
+  if(loading) return <PostSkeleton/>
+
 
   return <div className={classes.postContainer}>
     <article className={classes.article} >

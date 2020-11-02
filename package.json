@@ -21,6 +21,7 @@
     "react-helmet": "^5.2.1",
     "react-lines-ellipsis": "^0.14.1",
     "react-modal": "^3.11.2",
+    "react-refresh": "^0.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-slick": "^0.25.2",
